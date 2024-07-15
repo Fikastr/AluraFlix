@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Video Manager</title>
+    <link rel="icon" href="logo.webp" type="image/x-icon">
+    <link rel="shortcut icon" href="logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos opcionales para mejorar la apariencia */
+        .team-details {
+            display: none; /* Oculta todos los detalles del equipo al inicio */
+        }
+    </style>
+    <script src="script.js" defer></script>
+</head>
+
+<header>
+    <img src="logo.webp" alt="Logo" class="logo">
+    <h1>Grand Prix</h1>
+    <p>We don't prey for love, we just prey for cars...</p>
+</header>
+<main>
+    <div class="container">
+        <!-- Video principal y contenido -->
+        <section class="main-section">
+            <div class="video-text">
+                <h3>Bienvenido a Grand Prix, la plataforma definitiva para los aficionados de la Formula 1. 
+                    Nuestra pagina permite a los usuarios explorar, subir y gestionar videos relacionados con todas 
+                    las escuderias de F1. Los usuarios pueden registrar nuevos videos, actualizar informacion, y eliminar
+                    contenido cuando sea necesario, manteniendo as1 una biblioteca dinamica y actualizada. Descubre 
+                    emocionantes momentos de carreras, entrevistas exclusivas y detras de camaras de tus equipos 
+                    favoritos, todo en un solo lugar. Unete a la comunidad y comparte tu pasion por la F1.</h3>
+                <h4>Teams</h4>
+                <div class="buttons-top">
+                    <button class="team-button redbull-button" onclick="showSection('redbull-details')">Red Bull</button>
+                    <button class="team-button ferrari-button" onclick="showSection('ferrari-details')">Ferrari</button>
+                    <button class="team-button mclaren-button" onclick="showSection('mclaren-details')">McLaren</button>
+                    <button class="team-button astonmartin-button" onclick="showSection('aston-martin-details')">Aston Martin</button>
+                    <button class="team-button haas-button" onclick="showSection('haas-details')">Haas</button>
+                </div>
+                <div class="buttons-bottom">
+                    <button class="team-button williams-button" onclick="showSection('williams-details')">Williams</button>
+                    <button class="team-button visacashapp-button" onclick="showSection('visa-cash-app-details')">Visa Cash App</button>
+                    <button class="team-button stakef1team-button" onclick="showSection('stake-f1-team-kick-sauber-details')">Stake F1 Team Kick Sauber</button>
+                    <button class="team-button alpine-button" onclick="showSection('alpine-details')">Alpine</button>
+                    <button class="team-button mercedes-button" onclick="showSection('mercedes-details')">Mercedes</button>
+                </div>
+            </div>
+            <div class="video-container">
+                <video src="Video 2.mp4" controls class="main-video"></video>
+            </div>
+        </section>
+
+        <!-- División entre video-container y video-gallery -->
+        <div class="divider"></div>
+
+        <!-- Texto F1 Gallery y otros videos -->
+        <h2 class="gallery-header">F1 Gallery</h2>
+        <section class="video-gallery">
+            <div class="video-item">
+                <video src="Video1.mp4" controls></video>
+            </div>
+            <div class="video-item">
+                <video src="video3.mp4" controls></video>
+            </div>
+            <div class="video-item">
+                <video src="Video4.mp4" controls></video>
+            </div>
+        </section>
+
+        <!-- Línea divisoria y sección para subir videos -->
+        <div class="divider"></div>
+        <h2 class="upload-header">Upload Video</h2>
+        <div class="add-video">
+            <label for="f1-video-title">Nombre del video:</label>
+            <input type="text" id="f1-video-title" placeholder="Video Title">
+
+            <label for="f1-video-description">Descripción del video:</label>
+            <textarea id="f1-video-description" placeholder="Video Description"></textarea>
+
+            <label for="f1-video-file">Archivo del video:</label>
+            <input type="file" id="f1-video-file" accept="video/*">
+
+            <button class="add-button" onclick="addVideo('f1-video-list', 'f1-video-file', 'f1-video-title', 'f1-video-description')">Enviar</button>
+            <button class="clear-button" onclick="clearForm()">Limpiar</button>
+            <button class="back-button" onclick="showSection('main-container')">Back to Main</button>
+        </div>
+    </div>
+
+    <!-- Detalles de los equipos -->
+    <section class="team-details-section">
+        <div id="redbull-details" class="team-details section redbull-border">
+            <img src="red bull.webp" alt="Red Bull Logo">
+            <p>We're passionate about racing, our fans and we love what we do. Our goal is to continue to do things differently.</p>
+            <h3>Pilotos de Red Bull</h3>
+            <div class="drivers">
+                <div class="driver">
+                    <img src="Verstappen.jpg" alt="Max Verstappen">
+                    <h2>Max Verstappen</h2>
+                </div>
+                <div class="driver">
+                    <img src="Perez.jpg" alt="Sergio Perez">
+                    <h2>Sergio Pérez</h2>
+                </div>
+            </div>
+            <div class="video-list">
+                <ul id="redbull-video-list"></ul>
+            </div>
+            <div class="add-video">
+                <label for="red-bull-video-title">Nombre del video:</label>
+                <input type="text" id="red-bull-video-title" placeholder="Video Title">
+
+                <label for="red-bull-video-description">Descripción del video:</label>
+                <textarea id="red-bull-video-description" placeholder="Video Description"></textarea>
+
+                <label for="red-bull-video-file">Archivo del video:</label>
+                <input type="file" id="red-bull-video-file" accept="video/*">
+
+                <button class="add-button" onclick="addVideo('redbull-video-list', 'red-bull-video-file', 'red-bull-video-title', 'red-bull-video-description')">Enviar</button>
+                <button class="back-button" onclick="showSection('main-container')">Back to Main</button>
+            </div>
+        </div>
+
+        <div id="ferrari-details" class="team-details section ferrari-border">
+            <img src="ferrari.png" alt="Ferrari Logo">
+            <p>Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.</p>
+            <h3>Ferrari Pilotos</h3>
+            <div class="drivers">
+                <div class="driver">
+                    <img src="Leclerc.jpg" alt="Charles Leclerc">
+                    <h2>Charles Leclerc</h2>
+                </div>
+                <div class="driver">
+                    <img src="Sainz.jpg" alt="Carlos Sainz">
+                    <h2>Carlos Sainz</h2>
+                </div>
+            </div>
+            <div class="video-list">
+                <ul id="ferrari-video-list"></ul>
+            </div>
+            <div class="add-video">
+                <label for="ferrari-video-title">Nombre del video:</label>
+                <input type="text" id="ferrari-video-title" placeholder="Video Title">
+
+                <label for="ferrari-video-description">Descripción del video:</label>
+                <textarea id="ferrari-video-description" placeholder="Video Description"></textarea>
+
+                <label for="ferrari-video-file">Archivo del video:</label>
+                <input type="file" id="ferrari-video-file" accept="video/*">
+
+                <button class="add-button" onclick="addVideo('ferrari-video-list', 'ferrari-video-file', 'ferrari-video-title', 'ferrari-video-description')">Enviar</button>
+            </div>
+        </div>
+
+        <div id="mclaren-details" class="team-details section mclaren-border">
+            <img src="mclaren.png" alt="McLaren Logo">
+            <p>Our customers can test drive the new vehicle in the store.</p>
+            <h3>McLaren Pilotos</h3>
+            <div class="drivers">
+                <div class="driver">
+                    <img src="Norris.jpg" alt="Lando Norris">
+                    <h2>Lando Norris</h2>
+                </div>
+                <div class="driver">
+                    <img src="Piastri.jpg" alt="Oscar Piastri">
+                    <h2>Oscar Piastri</h2>
+                </div>
+            </div>
+            <div class="video-list">
+                <ul id="mclaren-video-list"></ul>
+            </div>
+            <div class="add-video">
+                <label for="mclaren-video-title">Nombre del video:</label>
+                <input type="text" id="mclaren-video-title" placeholder="Video Title">
+
+                <label for="mclaren-video-description">Descripción del video:</label>
+                <textarea id="mclaren-video-description" placeholder="Video Description"></textarea>
+
+                <label for="mclaren-video-file">Archivo del video:</label>
+                <input type="file" id="mclaren-video-file" accept="video/*">
+
+                <button class="add-button" onclick="addVideo('mclaren-video-list', 'mclaren-video-file', 'mclaren-video-title', 'mclaren-video-description')">Enviar</button>
+            </div>
+        </div>
+
+        <div id="aston-martin-details" class="team-details section aston-martin-border">
+            <img src="aston martin.webp" alt="Aston Martin Logo">
+            <p>Thank you for using Aston Martin.</p>
+            <h3>Aston Martin Pilotos</h3>
+            <div class="drivers">
+                <div class="driver">
+                    <img src="Alonso.jpg" alt="Fernando Alonso">
+                    <h2>Fernando Alonso</h2>
+                </div>
+                <div class="driver">
+                    <img src="Stroll.jpg" alt="Lance Stroll">
+                    <h2>Lance Stroll</h2>
+                </div>
+            </div>
+            <div class="video-list">
+                <ul id="aston-martin-video-list"></ul>
+            </div>
+            <div class="add-video">
+                <label for="aston-martin-video-title">Nombre del video:</label>
+                <input type="text" id="aston-martin-video-title" placeholder="Video Title">
+
+                <label for="aston-martin-video-description">Descripción del video:</label>
+                <textarea id="aston-martin-video-description" placeholder="Video Description"></textarea>
+
+                <label for="aston-martin-video-file">Archivo del video:</label>
+                <input type="file" id="aston-martin-video-file" accept="video/*">
+
+                <button class="add-button" onclick="addVideo('aston-martin-video-list', 'aston-martin-video-file', 'aston-martin-video-title', 'aston-martin-video-description')">Enviar</button>
+            </div>
+        </div>
+
+        <div id="haas-details" class="team-details section haas-border">
+            <img src="haas.png" alt="Haas Logo">
+            <p>Our competitors can test drive the new vehicle in the store.</p>
+            <h3>Haas Pilotos</h3>
+            <div class="drivers">
+                <div class="driver">
+                    <img src="Hulkenberg.jpg" alt="Nico Hulkenberg">
+                    <h2>Nico Hulkenberg</h2>
+                </div>
+                <div class="driver">
+                    <img src="Magnussen.jpg" alt="Kevin Magnussen">
+                    <h2>Kevin Magnussen</h2>
+                </div>
+            </div>
+            <div class="video-list">
+                <ul id="haas-video-list"></ul>
+            </div>
+            <div class="add-video">
+                <label for="haas-video-title">Nombre del video:</label>
+                <input type="text" id="haas-video-title" placeholder="Video Title">
+
+                <label for="haas-video-description">Descripción del video:</label>
+                <textarea id="haas-video-description" placeholder="Video Description"></textarea>
+
+                <label for="haas-video-file">Archivo del video:</label>
+                <input type="file" id="haas-video-file" accept="video/*">
+
+                <button class="add-button" onclick="addVideo('haas-video-list', 'haas-video-file', 'haas-video-title', 'haas-video-description')">Enviar</button>
+            </div>
+        </div>
+
+        <div id="williams-details" class="team-details section williams-border">
+            <img src="williams.webp" alt="Williams Logo">
+            <p>Eligibility of the victor is established by selecting the car or specifying the fast.</p>
+            <h3>Pilotos de Williams</h3>
+            <div class="drivers">
+                <div class="driver">
+                    <img src="Sargeant.jpg" alt="Logan Sargeant">
+                    <h2>Logan Sargeant</h2>
+                </div>
+                <div class="driver">
+                    <img src="Albon.jpg" alt="Alexander Albon">
+                    <h2>Alexander Albon</h2>
+                </div>
+            </div>
+            <div class="video-list">
+                <ul id="williams-video-list"></ul>
+            </div>
+            <div class="add-video">
+                <label for="williams-video-title">Nombre del video:</label>
+                <input type="text" id="williams-video-title" placeholder="Video Title">
+
+                <label for="williams-video-description">Descripción del video:</label>
+                <textarea id="williams-video-description" placeholder="Video Description"></textarea>
+
+                <label for="williams-video-file">Archivo del video:</label>
+                <input type="file" id="williams-video-file" accept="video/*">
+
+                <button class="add-button" onclick="addVideo('williams-video-list', 'williams-video-file', 'williams-video-title', 'williams-video-description')">Enviar</button>
+            </div>
+        </div>
+
+        <div id="visa-cash-app-details" class="team-details section visa-cash-app-border">
+            <img src="visa.png" alt="Visa Cash App Logo">
+            <p>We are not experts in insurance matters, only the best.</p>
+            <h3>Visa Cash App Pilotos</h3>
+            <div class="drivers">
+                <div class="driver">
+                    <img src="Ricciardo.jpg" alt="Daniel Ricciardo">
+                    <h2>Daniel Ricciardo</h2>
+                </div>
+                <div class="driver">
+                    <img src="Tsunoda.jpg" alt="Yuke Tsunoda">
+                    <h2>Yuki Tsunoda</h2>
+                </div>
+            </div>
+            <div class="video-list">
+                <ul id="visa-cash-app-video-list"></ul>
+            </div>
+            <div class="add-video">
+                <label for="visa-cash-app-video-title">Nombre del video:</label>
+                <input type="text" id="visa-cash-app-video-title" placeholder="Video Title">
+        
+                <label for="visa-cash-app-video-description">Descripción del video:</label>
+                <textarea id="visa-cash-app-video-description" placeholder="Video Description"></textarea>
+        
+                <label for="visa-cash-app-video-file">Archivo del video:</label>
+                <input type="file" id="visa-cash-app-video-file" accept="video/*">
+        
+                <button class="add-button" onclick="addVideo('visa-cash-app-video-list', 'visa-cash-app-video-file', 'visa-cash-app-video-title', 'visa-cash-app-video-description')">Enviar</button>
+            </div>
+        </div>
+
+         <div id="alpine-details" class="team-details section alpine-border">
+                    <img src="alpine.png" alt="Alpine Logo">
+                    <p>Join the Alpine journey to excellence.</p>
+                    <h3>Alpine Pilotos</h3>
+                    <div class="drivers">
+                        <div class="driver">
+                            <img src="Gasly.jpg" alt="Pierre Gasly">
+                            <h2>Pierre Gasly</h2>
+                        </div>
+                        <div class="driver">
+                            <img src="Ocon.jpg" alt="Esteban Ocon">
+                            <h2>Esteban Ocon</h2>
+                        </div>
+                    </div>
+                    <div class="video-list">
+                        <ul id="alpine-video-list"></ul>
+                    </div>
+                    <div class="add-video">
+                        <label for="alpine-video-title">Nombre del video:</label>
+                        <input type="text" id="alpine-video-title" placeholder="Video Title">
+                
+                        <label for="alpine-video-description">Descripción del video:</label>
+                        <textarea id="alpine-video-description" placeholder="Video Description"></textarea>
+                
+                        <label for="alpine-video-file">Archivo del video:</label>
+                        <input type="file" id="alpine-video-file" accept="video/*">
+                
+                        <button class="add-button" onclick="addVideo('alpine-video-list', 'alpine-video-file', 'alpine-video-title', 'alpine-video-description')">Enviar</button>
+                    </div>
+                </div>
+                
+         <div id="stake-f1-team-kick-sauber-details" class="team-details section stake-f1-team-kick-sauber-border">
+                    <img src="stake.png" alt="Stake F1 Team Kick Sauber Logo">
+                    <p>Feel the adrenaline with Alfa Romeo.</p>
+                    <h3>Stake F1 Team Kick Sauber Pilotos</h3>
+                    <div class="drivers">
+                        <div class="driver">
+                            <img src="Zhou.jpg" alt="Zhou Guanyu">
+                            <h2>Zhou Guanyu</h2>
+                        </div>
+                        <div class="driver">
+                            <img src="Bottas.jpg" alt="Valtteri Bottas">
+                            <h2>Valtteri Bottas</h2>
+                        </div>
+                    </div>
+                    <div class="video-list">
+                        <ul id="stake-f1-team.kick-sauber-video-list"></ul>
+                    </div>
+                    <div class="add-video">
+                        <label for="stake-f1-team-kick-sauber-video-title">Nombre del video:</label>
+                        <input type="text" id="stake-f1-team-kick-sauber-video-title" placeholder="Video Title">
+                
+                        <label for="stake-f1-team-kick-sauber-video-description">Descripción del video:</label>
+                        <textarea id="stake.f1.team-kick-sauber-video-description" placeholder="Video Description"></textarea>
+                
+                        <label for="stake-f1-team-kick-sauber-video-file">Archivo del video:</label>
+                        <input type="file" id="stake-f1-team-kick-sauber-video-file" accept="video/*">
+                
+                        <button class="add-button" onclick="addVideo('stake-f1-team-kick-sauber-video-list', 'stake-f1-team-kick-sauber-video-file', 'stake-f1-team-kick-sauber-video-title', 'stake-f1-team-kick-sauber-video-description')">Enviar</button>
+                    </div>
+                </div>
+        <div id="mercedes-details" class="team-details section mercedes-border">
+                    <img src="mercedes.png" alt="Mercedes Logo">
+                    <p>Join the Alpine journey to excellence.</p>
+                    <h3>Mercedes Pilotos</h3>
+                    <div class="drivers">
+                        <div class="driver">
+                            <img src="Hamilton.jpg" alt="Lewis Hamilton">
+                            <h2>Lewis Hamilton</h2>
+                        </div>
+                        <div class="driver">
+                            <img src="Russell.jpg" alt="George Russell">
+                            <h2>George Russell</h2>
+                        </div>
+                    </div>
+                    <div class="video-list">
+                        <ul id="mercedes-video-list"></ul>
+                    </div>
+                    <div class="add-video">
+                        <label for="mercedes-video-title">Nombre del video:</label>
+                        <input type="text" id="mercedes-video-title" placeholder="Video Title">
+                
+                        <label for="amercedes-video-description">Descripción del video:</label>
+                        <textarea id="mercedes-video-description" placeholder="Video Description"></textarea>
+                
+                        <label for="mercedes-video-file">Archivo del video:</label>
+                        <input type="file" id="mercedes-video-file" accept="video/*">
+                
+                        <button class="add-button" onclick="addVideo('mercedes-video-list', 'mercedes-video-file', 'mercedes-video-title', 'mercedes-video-description')">Enviar</button>
+                    </div>
+                </div>
+   </section>
+   </main>
+</html>             

@@ -1,0 +1,315 @@
+/* Estilos generales */
+body {
+    font-family: 'Cute Font', cursive;
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: rgb(207, 191, 231);
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 100px; /* Ajusta el tamaño según tu necesidad */
+    margin-bottom: 10px; /* Espacio entre el logo y el título */
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Cute Font', cursive;
+}
+
+header p {
+    margin: 0;
+}
+
+/*sección de la página principal*/
+
+.container {
+    background-image: url('background.webp'); /* Ruta de tu imagen webp de fondo */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    margin: 20px;
+    border: 5px solid red; /* Borde rojo */
+    color: rgb(0, 0, 0);
+}
+
+.main-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.video-text {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.video-text h2 {
+    margin-bottom: 10px;
+}
+
+.video-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px; /* Espacio entre video-container y video-gallery */
+}
+
+.video-container video {
+    width: 80%; /* Reducir tamaño del video */
+}
+
+.buttons-top,
+.buttons-bottom {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.buttons-top button,
+.buttons-bottom button {
+    flex: 1;
+    margin: 5px;
+    padding: 12px;
+    font-size: 25px; /* Tamaño más grande para los botones */
+    border: none;
+    cursor: pointer;
+    border-radius: 15%; /* Hacer los botones redondos */
+    font-family: 'Cute Font', cursive; /* Asegurar la fuente en los botones */
+}
+
+.redbull-button {
+    background-color: #121f45; /* Rojo */
+    color: #ffffff
+}
+
+.ferrari-button {
+    background-color: #a6051a; /* Naranja */
+    color: #ffffff
+}
+
+.mclaren-button {
+    background-color: #ff8000; /* Amarillo */
+    color: #ffffff
+}
+
+.astonmartin-button {
+    background-color: #00594f; /* Verde */
+    color: #ffffff
+}
+
+.haas-button {
+    background-color: #4e4d4d; /* Azul */
+    color: #ffffff
+}
+
+.williams-button {
+    background-color: #00a3e0; /* Índigo */
+    color: #ffffff
+}
+
+.visacashapp-button {
+    background-color: #041f3d; /* Violeta */
+    color: #ffffff
+}
+
+.stakef1team-button {
+    background-color: #004e37; /* Rosa */
+    color: #ffffff
+}
+
+.alpine-button {
+    background-color: #fd4bc7; /* Cian */
+    color: #ffffff
+}
+
+.mercedes-button {
+    background-color: #00a19c; /* Gris */
+    color: #ffffff
+}
+
+.buttons-top button:hover,
+.buttons-bottom button:hover {
+    opacity: 0.8; /* Cambio de opacidad al pasar el cursor */
+}
+
+.divider {
+    height: 2px;
+    background-color: white;
+    margin: 20px 0;
+}
+
+.gallery-header,
+.upload-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.video-gallery {
+    display: flex;
+    justify-content: space-between;
+}
+
+.video-item {
+    width: calc(33.33% - 10px);
+    margin: 10px; /* Espacio entre los videos */
+    border: 2px solid red; /* Borde rojo */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.video-item video {
+    width: 100%;
+}
+
+.add-video {
+    background-color: #f7e8e8;
+    padding: 20px;
+    border: 2px solid red;
+    margin: 20px 0;
+    color: rgb(0, 0, 0);
+}
+
+.add-video label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.add-video input[type="text"],
+.add-video textarea,
+.add-video input[type="file"] {
+    display: block;
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #e8d2d2; /* Color de fondo */
+    color: black; /* Color de texto */
+    font-family: 'Cute Font', cursive; /* Asegurar la fuente en los inputs y textarea */
+    font-size: 18px; /* Aumentar tamaño de letra */
+}
+
+.add-video button {
+    background-color: #ff0000; /* Color rojo para el botón enviar */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    margin-right: 10px;
+}
+
+.clear-button {
+    background-color: #555; /* Color gris para el botón limpiar */
+}
+
+.add-video button:hover {
+    opacity: 0.8; /* Cambio de opacidad al pasar el cursor */
+}
+
+/* Estilos para las secciones de detalles del equipo */
+
+#redbull-details {
+    border-color: #121f45; /* Borde rojo para Red Bull */
+}
+#ferrari-details {
+    border-color: #a6051a; /* Borde naranja para Ferrari */
+}
+#mclaren-details {
+    border-color: #ff8000; /* Borde amarillo para McLaren */
+}
+#aston-martin-details {
+    border-color: #00594f; /* Borde verde para Aston Martin */
+}
+#haas-details {
+    border-color: #aeaeae; /* Borde rosa para Haas */
+}
+#williams-details {
+    border-color: #00a3e0; /* Borde morado para Williams */
+}
+#visa-cash-app-details {
+    border-color: #041f3d; /* azul para Visa Cash App */
+}
+#stake-f1-team-kick-sauber-details {
+    border-color: #004e37; /* Borde lila para Stake F1 Team Kick Sauber */
+}
+#alpine-details {
+    border-color: #fd4bc7; /* Borde verde oscuro para Alpine */
+}
+#mercedes-details {
+    border-color: #00a19c; /* Borde gris para Mercedes */
+}
+
+.team-details {
+    padding: 20px;
+    border-width: 5px;
+    border-style: solid;
+    margin-bottom: 20px;
+    text-align: center; /* Centrar contenido */
+    font-size: 25px; /* Tamaño más grande para los botones */
+}
+
+.team-details img {
+    width: 150px;
+    height: auto;
+    display: block; /* Asegura que la imagen sea un bloque para centrar automáticamente */
+    margin: 0 auto; /* Margen automático para centrar horizontalmente */
+}
+
+.add-video input,
+.add-video textarea {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    background-color: #1e293b; /* Fondo ligeramente más claro */
+    color: #ffffff; /* Texto blanco */
+}
+
+.add-video button {
+    background-color: #0d2c39; /* Color azul claro */
+    color: #ffffff; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.add-video button:hover {
+    background-color: #1e293b; /* Fondo ligeramente más claro */
+}
+.back-button {
+    background-color: #ff0000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    font-family: 'Cute Font', cursive;
+    font-size: 18px;
+}
+
+.back-button:hover {
+    opacity: 0.8;
+}
+
+.drivers {
+    display: flex;
+    justify-content: space-around;
+}
+
+.driver img {
+    width: 100px;
+    height: auto;
+}
+
+.driver h2 {
+    text-align: center;
+    font-size: 1rem;
+}
