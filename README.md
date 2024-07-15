@@ -20,7 +20,7 @@ Instalación y Uso
 
     bash
 
-    git clone https://github.com/tu_usuario/f1-video-manager.git
+    git clone https://github.com/Fikastr/AluraFlix.git
 
     Abrir el proyecto:
         Navega hasta el directorio del proyecto f1-video-manager.
